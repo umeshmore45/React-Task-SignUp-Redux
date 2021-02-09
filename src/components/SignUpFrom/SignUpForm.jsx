@@ -35,12 +35,12 @@ function SignUpForm(props) {
             placeholder="1644"
             required
           />
-          <label htmlFor="SignUpPhone">
+          <label htmlFor="SignUpPassword">
             Password<span>* </span>{" "}
           </label>
           <input
             type="password"
-            name="SignUpPhone"
+            name="SignUpPassword"
             onChange={props.updatePassword}
             placeholder="Pass@123"
             required

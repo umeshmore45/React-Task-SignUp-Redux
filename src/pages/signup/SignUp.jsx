@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import SignUpForm from "../../components/SignUpFrom/SignUpForm";
 import authActionGenretor from "../../redux/action/authActionGenretor";
@@ -36,11 +36,24 @@ const SignUp = (props) => {
 
   const SignUpSubmit = (event) => {
     event.preventDefault();
-
     props.Sign(formData);
   };
 
   console.log(props.state);
+
+  useEffect(() => {
+    if (props.state.success) {
+      props.history.push({
+        pathname: "/signUp/Otp",
+        state: props.state,
+      });
+    } else {
+      if (props.state.Response) {
+        alert(props.state.Response);
+      }
+    }
+  });
+
   return (
     <div>
       <h1>SignUp</h1>
