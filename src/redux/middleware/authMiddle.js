@@ -120,4 +120,41 @@ const SignIn = (action, payload) => async (dispatch, getstate) => {
     });
 };
 
-export { SignUp, SignUpOtp, SignIn };
+const GetUser = (action, payload) => async (dispatch, getstate) => {
+  console.log(payload.token);
+
+  // let url = `${process.env.REACT_APP_BASE_URL}/user`;
+  // fetch(url, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Authorization: "Bearer " + payload.token,
+  //   },
+  // })
+  //   .then((response) => {
+  //     console.log(response.json());
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((e) => {
+  //     console.log(e);
+  //     return e;
+  //   });
+
+  axios
+    .get(`${process.env.REACT_APP_BASE_URL}/user`, {
+      headers: {
+        authorization: `Bearer ${payload.token}`,
+      },
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+};
+
+export { SignUp, SignUpOtp, SignIn, GetUser };

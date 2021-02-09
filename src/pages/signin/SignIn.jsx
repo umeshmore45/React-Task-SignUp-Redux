@@ -34,7 +34,7 @@ const SignIn = (props) => {
   useEffect(() => {
     if (props.state.success) {
       props.history.push({
-        pathname: "/",
+        pathname: "/signIn/details",
         state: props.state,
       });
     } else {

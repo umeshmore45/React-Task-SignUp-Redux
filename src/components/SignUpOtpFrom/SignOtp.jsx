@@ -12,7 +12,6 @@ function SignUpOtpForm(props) {
           placeholder="145268"
           required
         />
-        <button type="submit">Submit</button>
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 import { authActionType } from "../constant/authActionType";
-import { SignIn, SignUp, SignUpOtp } from "../middleware/authMiddle";
+import { GetUser, SignIn, SignUp, SignUpOtp } from "../middleware/authMiddle";
 
 const authActionGenretor = (actionType, payload = {}) => {
   switch (actionType) {
@@ -11,6 +11,9 @@ const authActionGenretor = (actionType, payload = {}) => {
 
     case authActionType.SIGNIN:
       return SignIn(actionType, payload);
+
+    case authActionType.GETUSER:
+      return GetUser(actionType, payload);
 
     default:
       return {
