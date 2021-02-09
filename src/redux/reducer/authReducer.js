@@ -23,6 +23,12 @@ const authReducer = (state = intialState, action) => {
         user: { ...action.payload },
       };
 
+    case authActionType.GETUSER:
+      return {
+        ...state,
+        user: { ...action.payload },
+      };
+
     default:
       return {
         ...state,
