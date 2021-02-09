@@ -93,13 +93,26 @@ const SignIn = (action, payload) => async (dispatch, getstate) => {
     .post(`${process.env.REACT_APP_BASE_URL}/user/login`, Request, axiosConfig)
     .then((data) => {
       console.log(data.data);
-      let newpayload = {
-        data: data.data,
-      };
-      dispatch({
-        type: authActionType.SIGNIN,
-        payload: { ...newpayload },
-      });
+
+      if (data.data.success) {
+        let newpayload = {
+          data: data.data,
+          success: data.data.success,
+        };
+        dispatch({
+          type: authActionType.SIGNIN,
+          payload: { ...newpayload },
+        });
+      } else {
+        let newpayload = {
+          success: data.data.success,
+          response: data.data.msg,
+        };
+        dispatch({
+          type: authActionType.SIGNIN,
+          payload: { ...newpayload },
+        });
+      }
     })
     .catch((e) => {
       console.log(e);
