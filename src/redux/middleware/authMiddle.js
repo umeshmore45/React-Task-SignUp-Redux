@@ -2,11 +2,6 @@ import { authActionType } from "../constant/authActionType";
 import axios from "axios";
 
 const SignUp = (action, payload) => async (dispatch, getstate) => {
-  let newpaylaod = {
-    name: "Umesh",
-    Id: "20",
-  };
-
   let { name, email, phone, password } = payload.user;
 
   let axiosConfig = {
@@ -25,16 +20,37 @@ const SignUp = (action, payload) => async (dispatch, getstate) => {
     )
     .then((data) => {
       console.log(data.data);
+      let newpayload = {
+        name,
+        email,
+        phone,
+        password,
+        Response: data.data.msg,
+        success: data.data.success,
+      };
+      dispatch({
+        type: authActionType.SIGNUP,
+        payload: { ...newpayload },
+      });
     })
     .catch((e) => {
       console.log(e);
       return e;
     });
+};
+
+const SignUpOtp = (action, payload) => (dispatch, getstate) => {
+  // console.log(payload.user);
+
+  let newpayload = {
+    name: "umesh",
+    Id: "2",
+  };
 
   dispatch({
-    type: authActionType.SIGNUP,
-    payload: { ...newpaylaod },
+    type: authActionType.SIGNUPOTP,
+    payload: { ...newpayload },
   });
 };
 
-export { SignUp };
+export { SignUp, SignUpOtp };

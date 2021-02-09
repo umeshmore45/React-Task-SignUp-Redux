@@ -11,6 +11,12 @@ const authReducer = (state = intialState, action) => {
         user: { ...action.payload },
       };
 
+    case authActionType.SIGNUPOTP:
+      return {
+        ...state,
+        user: { ...action.payload },
+      };
+
     default:
       return {
         ...state,
