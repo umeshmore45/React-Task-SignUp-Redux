@@ -36,11 +36,11 @@ const SignUp = (props) => {
 
   const SignUpSubmit = (event) => {
     event.preventDefault();
-
     props.Sign(formData);
   };
 
   console.log(props.state);
+
   return (
     <div>
       <h1>SignUp</h1>
