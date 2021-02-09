@@ -78,4 +78,33 @@ const SignUpOtp = (action, payload) => async (dispatch, getstate) => {
     });
 };
 
-export { SignUp, SignUpOtp };
+const SignIn = (action, payload) => async (dispatch, getstate) => {
+  let { email, password } = payload.user;
+
+  let axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
+  let Request = { email, password };
+
+  await axios
+    .post(`${process.env.REACT_APP_BASE_URL}/user/login`, Request, axiosConfig)
+    .then((data) => {
+      console.log(data.data);
+      let newpayload = {
+        data: data.data,
+      };
+      dispatch({
+        type: authActionType.SIGNIN,
+        payload: { ...newpayload },
+      });
+    })
+    .catch((e) => {
+      console.log(e);
+      return e;
+    });
+};
+
+export { SignUp, SignUpOtp, SignIn };
