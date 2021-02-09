@@ -47,6 +47,10 @@ const SignUp = (props) => {
         pathname: "/signUp/Otp",
         state: props.state,
       });
+    } else {
+      if (props.state.Response) {
+        alert(props.state.Response);
+      }
     }
   });
 

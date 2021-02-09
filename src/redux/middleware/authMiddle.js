@@ -39,18 +39,43 @@ const SignUp = (action, payload) => async (dispatch, getstate) => {
     });
 };
 
-const SignUpOtp = (action, payload) => (dispatch, getstate) => {
-  // console.log(payload.user);
+const SignUpOtp = (action, payload) => async (dispatch, getstate) => {
+  let { name, email, phone, password, Otp } = payload.user;
 
-  let newpayload = {
-    name: "umesh",
-    Id: "2",
+  let axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+    },
   };
+  let Request = { name, email, phone, password, otpResponse: Otp };
 
-  dispatch({
-    type: authActionType.SIGNUPOTP,
-    payload: { ...newpayload },
-  });
+  await axios
+    .post(
+      `${process.env.REACT_APP_BASE_URL}/user/verifyRegister`,
+      Request,
+      axiosConfig
+    )
+    .then((data) => {
+      console.log(data.data);
+      let newpayload = {
+        name,
+        email,
+        phone,
+        password,
+        Otp,
+        response: data.data.msg,
+        success: data.data.success,
+      };
+      dispatch({
+        type: authActionType.SIGNUPOTP,
+        payload: { ...newpayload },
+      });
+    })
+    .catch((e) => {
+      console.log(e);
+      return e;
+    });
 };
 
 export { SignUp, SignUpOtp };
