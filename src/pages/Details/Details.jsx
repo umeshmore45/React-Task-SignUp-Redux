@@ -4,24 +4,26 @@ import authActionGenretor from "../../redux/action/authActionGenretor";
 import { authActionType } from "../../redux/constant/authActionType";
 
 class Details extends Component {
-  state = {
-    token: "",
-  };
+  // state = {
+  //   token: "",
+  // };
 
   componentDidMount = () => {
-    this.setState({
-      token: this.props.state.data.token,
-    });
-
-    this.props.GetDetails(this.props.state.data.token);
+    // console.log(document.cookie);
+    let cok = document.cookie.split(";");
+    // console.log(cok[0]);
+    // this.setState({
+    //   token: this.props.state.data.token,
+    // });
+    this.props.GetDetails(cok[0]);
   };
 
   render() {
-    console.log(this.props.state);
+    // console.log(this.props.state);
 
     return (
       <div>
-        <h1>Details</h1>
+        <h1>DashBoard</h1>
       </div>
     );
   }
