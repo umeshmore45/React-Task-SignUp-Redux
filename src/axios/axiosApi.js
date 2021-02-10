@@ -22,7 +22,6 @@ const hitApi = async ({
         });
 
     default:
-      console.log("get");
       return await axios
         .get(url, {
           headers: { ...headers },

@@ -29,13 +29,13 @@ const SignIn = (props) => {
     props.SignIn(formData);
   };
 
-  console.log(props.state);
-
   useEffect(() => {
+    console.log(props.state.token, "Hello");
+    document.cookie = props.state.token;
     if (props.state.success) {
       props.history.push({
         pathname: "/signIn/details",
-        state: props.state,
+        // state: props.state,
       });
     } else {
       if (props.state.response) {

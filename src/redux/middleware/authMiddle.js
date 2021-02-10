@@ -151,6 +151,7 @@ const SignIn = (action, payload) => async (dispatch, getstate) => {
       let newpayload = {
         data: data.data,
         success: data.data.success,
+        token: data.data.token,
       };
       dispatch({
         type: authActionType.SIGNIN,
