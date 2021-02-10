@@ -1,6 +1,16 @@
-import { TextField } from "@material-ui/core";
+import { makeStyles, TextField } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: "2vw",
+      width: "60vh",
+    },
+  },
+}));
 
 function SignUpOtpForm(props) {
+  const classes = useStyles();
   return (
     <div>
       {/* <form onSubmit={props.SignUpSubmit}>
@@ -16,7 +26,12 @@ function SignUpOtpForm(props) {
         />
       </form> */}
 
-      <form noValidate autoComplete="off" onSubmit={props.SignUpSubmit}>
+      <form
+        className={classes.root}
+        noValidate
+        autoComplete="off"
+        onSubmit={props.SignUpSubmit}
+      >
         <TextField
           margin="normal"
           type="text"

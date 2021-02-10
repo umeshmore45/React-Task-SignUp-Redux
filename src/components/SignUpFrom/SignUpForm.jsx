@@ -1,6 +1,16 @@
-import { Button, TextField } from "@material-ui/core";
+import { Button, makeStyles, TextField } from "@material-ui/core";
+import { Link } from "react-router-dom";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: "2vw",
+      width: "60vh",
+    },
+  },
+}));
 
 function SignUpForm(props) {
+  const classes = useStyles();
   return (
     <div>
       <div>
@@ -51,7 +61,12 @@ function SignUpForm(props) {
           <button type="submit">Register</button>
         </form> */}
 
-        <form noValidate autoComplete="off" onSubmit={props.SignUpSubmit}>
+        <form
+          className={classes.root}
+          noValidate
+          autoComplete="off"
+          onSubmit={props.SignUpSubmit}
+        >
           <TextField
             margin="normal"
             type="text"
@@ -96,6 +111,11 @@ function SignUpForm(props) {
           >
             Register
           </Button>
+          <Link className={classes.root} to="/">
+            <Button margin="normal" variant="contained" color="primary">
+              BACK
+            </Button>
+          </Link>
         </form>
       </div>
     </div>
