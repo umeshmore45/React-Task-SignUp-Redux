@@ -30,7 +30,6 @@ const SignIn = (props) => {
   };
 
   useEffect(() => {
-    console.log(props.state.token, "Hello");
     document.cookie = props.state.token;
     if (props.state.success) {
       props.history.push({

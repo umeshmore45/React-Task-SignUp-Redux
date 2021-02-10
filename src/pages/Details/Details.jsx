@@ -33,6 +33,7 @@ class Details extends Component {
     document.cookie = "";
     this.props.history.push({
       pathname: "/",
+      state: "",
     });
   };
 }

@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
@@ -6,11 +7,15 @@ const Home = (props) => {
       <h1>Home</h1>
 
       <Link to="/signUp">
-        <button>SignUp</button>
+        <Button margin="normal" variant="contained" color="primary">
+          SignUp
+        </Button>
       </Link>
 
       <Link to="/signIn">
-        <button>SignIn</button>
+        <Button margin="normal" variant="contained" color="primary">
+          SignIn
+        </Button>
       </Link>
     </div>
   );
