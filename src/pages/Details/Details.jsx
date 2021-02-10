@@ -23,10 +23,18 @@ class Details extends Component {
 
     return (
       <div>
+        <button onClick={this.componentWillUnmount}>SignOut</button>
         <h1>DashBoard</h1>
       </div>
     );
   }
+
+  componentWillUnmount = (event) => {
+    document.cookie = "";
+    this.props.history.push({
+      pathname: "/",
+    });
+  };
 }
 const mapStateToProps = (state) => {
   return {
