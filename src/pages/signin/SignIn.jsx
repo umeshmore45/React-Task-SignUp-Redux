@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import SignInForm from "../../components/SignInForm/SignInForm";
+import { setCookies } from "../../helper/Cookies";
 import authActionGenretor from "../../redux/action/authActionGenretor";
 import { authActionType } from "../../redux/constant/authActionType";
 
@@ -30,9 +31,13 @@ const SignIn = (props) => {
   };
 
   useEffect(() => {
-    console.log(props.state.token, "Hello");
-    document.cookie = props.state.token;
     if (props.state.success) {
+      // document.cookie = props.state.token;
+      setCookies({
+        name: "token",
+        value: props.state.token,
+        path: "/signIn",
+      });
       props.history.push({
         pathname: "/signIn/details",
         // state: props.state,
@@ -40,6 +45,7 @@ const SignIn = (props) => {
     } else {
       if (props.state.response) {
         alert(props.state.response);
+        return (props.state.response = false);
       }
     }
   });
