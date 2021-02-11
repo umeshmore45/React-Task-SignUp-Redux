@@ -31,8 +31,8 @@ const SignIn = (props) => {
   };
 
   useEffect(() => {
+    // console.log(props.state, "hello");
     if (props.state.success) {
-      // document.cookie = props.state.token;
       setCookies({
         name: "token",
         value: props.state.token,
@@ -40,8 +40,8 @@ const SignIn = (props) => {
       });
       props.history.push({
         pathname: "/signIn/details",
-        // state: props.state,
       });
+      return (props.state.success = false);
     } else {
       if (props.state.response) {
         alert(props.state.response);
@@ -49,6 +49,8 @@ const SignIn = (props) => {
       }
     }
   });
+
+  // console.log(props);
 
   return (
     <div>
@@ -64,7 +66,7 @@ const SignIn = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    state: state.authReducer.user,
+    state: state.authReducer.userSignIn,
   };
 };
 

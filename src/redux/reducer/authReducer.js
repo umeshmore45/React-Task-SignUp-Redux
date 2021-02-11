@@ -1,15 +1,17 @@
 import { authActionType } from "../constant/authActionType";
 
 let intialState = {
-  user: [],
+  userSignUp: [],
+  userSignIn: [],
   userOtp: [],
+  userDetail: [],
 };
 const authReducer = (state = intialState, action) => {
   switch (action.type) {
     case authActionType.SIGNUP:
       return {
         ...state,
-        user: { ...action.payload },
+        userSignUp: { ...action.payload },
       };
 
     case authActionType.SIGNUPOTP:
@@ -21,13 +23,13 @@ const authReducer = (state = intialState, action) => {
     case authActionType.SIGNIN:
       return {
         ...state,
-        user: { ...action.payload },
+        userSignIn: { ...action.payload },
       };
 
     case authActionType.GETUSER:
       return {
         ...state,
-        user: { ...action.payload },
+        userDetail: { ...action.payload },
       };
 
     default:

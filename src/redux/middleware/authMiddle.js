@@ -232,6 +232,16 @@ const GetUser = (action, payload) => async (dispatch, getstate) => {
   })
     .then((data) => {
       console.log(data.data);
+
+      let newpayload = {
+        success: data.data.success,
+        user: data.data.user,
+      };
+
+      dispatch({
+        type: authActionType.GETUSER,
+        payload: { ...newpayload },
+      });
     })
     .catch((e) => {
       console.log(e);
