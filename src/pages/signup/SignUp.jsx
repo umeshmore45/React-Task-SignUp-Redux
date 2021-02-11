@@ -60,8 +60,9 @@ const SignUp = (props) => {
     if (props.otpState.success) {
       props.history.push({
         pathname: "/",
-        // state: props.otpState,
       });
+      alert(props.otpState.response);
+      props.otpState.response = false;
       return (props.otpState.success = false);
     } else {
       if (props.otpState.response) {
@@ -84,7 +85,9 @@ const SignUp = (props) => {
       {props.state.success ? (
         <SignUpOtpForm updateOtp={updateOtp} SignUpSubmit={SignUpSubmit} />
       ) : (
-        <h1>{props.state.Response}</h1>
+        <div>
+          <h1>{props.state.Response}</h1>
+        </div>
       )}
     </div>
   );
