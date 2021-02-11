@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
       width: "60vh",
     },
   },
+  li: {
+    textDecoration: "none",
+  },
 }));
 
 function SignUpForm(props) {
@@ -111,7 +114,7 @@ function SignUpForm(props) {
           >
             Register
           </Button>
-          <Link className={classes.root} to="/">
+          <Link className={classes.li} to="/">
             <Button margin="normal" variant="contained" color="primary">
               BACK
             </Button>

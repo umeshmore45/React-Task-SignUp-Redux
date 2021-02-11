@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: "5.5vh",
   },
+  li: {
+    textDecoration: "none",
+  },
 }));
 function SignInForm(props) {
   const classes = useStyles();
@@ -74,7 +77,7 @@ function SignInForm(props) {
           >
             SignIn
           </Button>
-          <Link className={classes.root} to="/">
+          <Link className={classes.li} to="/">
             <Button margin="normal" variant="contained" color="primary">
               BACK
             </Button>
