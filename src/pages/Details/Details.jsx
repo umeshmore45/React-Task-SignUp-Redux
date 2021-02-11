@@ -12,8 +12,15 @@ class Details extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.componentWillUnmount}>SignOut</button>
-        <h1>DashBoard</h1>
+        {this.props.state.success ? (
+          <div>
+            <button onClick={this.componentWillUnmount}>SignOut</button>
+            <p>Hello {this.props.state.user.name}</p>
+            <h1>DashBoard</h1>
+          </div>
+        ) : (
+          <p>LOading... </p>
+        )}
       </div>
     );
   }
@@ -28,7 +35,7 @@ class Details extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    state: state.authReducer.user,
+    state: state.authReducer.userDetail,
   };
 };
 

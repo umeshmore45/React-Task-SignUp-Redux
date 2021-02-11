@@ -4,6 +4,7 @@ let intialState = {
   userSignUp: [],
   userSignIn: [],
   userOtp: [],
+  userDetail: [],
 };
 const authReducer = (state = intialState, action) => {
   switch (action.type) {
@@ -28,7 +29,7 @@ const authReducer = (state = intialState, action) => {
     case authActionType.GETUSER:
       return {
         ...state,
-        user: { ...action.payload },
+        userDetail: { ...action.payload },
       };
 
     default:
