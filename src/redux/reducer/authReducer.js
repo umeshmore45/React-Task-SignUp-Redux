@@ -1,7 +1,8 @@
 import { authActionType } from "../constant/authActionType";
 
 let intialState = {
-  user: [],
+  userSignUp: [],
+  userSignIn: [],
   userOtp: [],
 };
 const authReducer = (state = intialState, action) => {
@@ -9,7 +10,7 @@ const authReducer = (state = intialState, action) => {
     case authActionType.SIGNUP:
       return {
         ...state,
-        user: { ...action.payload },
+        userSignUp: { ...action.payload },
       };
 
     case authActionType.SIGNUPOTP:
@@ -21,7 +22,7 @@ const authReducer = (state = intialState, action) => {
     case authActionType.SIGNIN:
       return {
         ...state,
-        user: { ...action.payload },
+        userSignIn: { ...action.payload },
       };
 
     case authActionType.GETUSER:

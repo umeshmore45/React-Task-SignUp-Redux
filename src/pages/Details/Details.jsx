@@ -1,30 +1,15 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { getCookies } from "../../helper/Cookies";
+import { getCookies, removeCookies } from "../../helper/Cookies";
 import authActionGenretor from "../../redux/action/authActionGenretor";
 import { authActionType } from "../../redux/constant/authActionType";
 
 class Details extends Component {
-  // state = {
-  //   token: "",
-  // };
-
   componentDidMount = () => {
-    // console.log(document.cookie);
-    // console.log(getCookies());
-
-    // let cok = document.cookie.split(";");
     this.props.GetDetails(getCookies());
-
-    // console.log(cok[0]);
-    // this.setState({
-    //   token: this.props.state.data.token,
-    // });
   };
 
   render() {
-    // console.log(this.props.state);
-
     return (
       <div>
         <button onClick={this.componentWillUnmount}>SignOut</button>
@@ -34,7 +19,7 @@ class Details extends Component {
   }
 
   componentWillUnmount = (event) => {
-    document.cookie = "";
+    removeCookies();
     this.props.history.push({
       pathname: "/",
       state: "",
