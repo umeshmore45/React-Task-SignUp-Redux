@@ -5,7 +5,7 @@ export const setCookies = ({ name, value, path }) => {
 
 export const getCookies = (name) => {
   let cok = document.cookie.split("=");
-  console.log(cok[1]);
+  // console.log(cok[1]);
   return cok[1];
 };
 

@@ -31,7 +31,6 @@ const SignIn = (props) => {
   };
 
   useEffect(() => {
-    // console.log(props.state, "hello");
     if (props.state.success) {
       setCookies({
         name: "token",
@@ -50,11 +49,8 @@ const SignIn = (props) => {
     }
   });
 
-  // console.log(props);
-
   return (
     <div>
-      <h1>SignIn</h1>
       <SignInForm
         updateEmail={updateEmail}
         updatePassword={updatePassword}

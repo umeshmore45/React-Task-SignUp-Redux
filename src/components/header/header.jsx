@@ -6,7 +6,7 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 const useStyles = makeStyles({
   container: {
     margin: "0px",
-    backgroundColor: "#fcfc23",
+    backgroundColor: "#fff",
     height: "17vh",
     width: "100%",
   },
@@ -44,7 +44,7 @@ const Header = (props) => {
     <div className={classes.container}>
       <Toolbar className={classes.logoContainer}>
         <Typography variant="h5" color="primary" className={classes.name}>
-          ASYNCENTRIC
+          S H O P P I N G
         </Typography>
         <IconButton>
           <Link to="/SignIn">
@@ -59,27 +59,27 @@ const Header = (props) => {
       </Toolbar>
       <Toolbar component="nav" className={classes.nav} variant="dense">
         <Link className={classes.li} to="/">
-          <Typography variant="p" color="primary">
+          <Typography variant="subtitle1" color="primary">
             Women
           </Typography>
         </Link>
         <Link className={classes.li} to="/">
-          <Typography variant="p" color="primary">
+          <Typography variant="subtitle1" color="primary">
             Men
           </Typography>
         </Link>
         <Link className={classes.li} to="/">
-          <Typography variant="p" color="primary">
+          <Typography variant="subtitle1" color="primary">
             Home & Decor
           </Typography>
         </Link>
         <Link className={classes.li} to="/">
-          <Typography variant="p" color="primary">
+          <Typography variant="subtitle1" color="primary">
             Kids
           </Typography>
         </Link>
         <Link className={classes.li} to="/">
-          <Typography variant="p" color="primary">
+          <Typography variant="subtitle1" color="primary">
             Electronics
           </Typography>
         </Link>
