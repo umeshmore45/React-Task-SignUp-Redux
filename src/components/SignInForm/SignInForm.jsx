@@ -1,4 +1,10 @@
-import { Button, CardMedia, makeStyles, TextField } from "@material-ui/core";
+import {
+  Button,
+  CardMedia,
+  makeStyles,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -70,6 +76,13 @@ function SignInForm(props) {
             autoComplete="off"
             onSubmit={props.SignInSubmit}
           >
+            <Typography
+              className={classes.email}
+              variant="subtitle1"
+              color="primary"
+            >
+              SIGNIN TO S H O P P I N G
+            </Typography>
             <TextField
               className={classes.email}
               margin="normal"
