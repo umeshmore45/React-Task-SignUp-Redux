@@ -1,6 +1,6 @@
-export const setCookies = ({ name, value, path }) => {
+export const setCookies = ({ name, value, path, max }) => {
   //   document.cookie = `${name}=${value};path=${path};max-age=31536000`;
-  document.cookie = `${name}=${value};max-age=31536000`;
+  document.cookie = `${name}=${value};max-age=${max}`;
 };
 
 export const getCookies = (name) => {
@@ -10,5 +10,5 @@ export const getCookies = (name) => {
 };
 
 export const removeCookies = (name) => {
-  setCookies({ name: "", value: "", path: "/" });
+  document.cookie = `${name}= `;
 };

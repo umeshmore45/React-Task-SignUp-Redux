@@ -21,7 +21,15 @@ class RichTextEditor extends Component {
       <div>
         <CKEditor
           editor={ClassicEditor}
-          data={this.state.addData}
+          data="<p>Entre Your Text Here</p>"
+          config={{
+            ckfinder: {
+              uploadUrl: "http://localhost:5000/uploads",
+            },
+            // options: {
+            //   resourceType: "image",
+            // },
+          }}
           onChange={this.handleChange}
         />
         <button

@@ -2,43 +2,87 @@ import { IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { Link } from "react-router-dom";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+// import { useState } from "react";
 
-const useStyles = makeStyles({
-  container: {
-    margin: "0px",
-    backgroundColor: "#fff",
-    height: "17vh",
-    width: "100%",
-  },
+// const useStyles = makeStyles((theme) => ({
+//   container: {
+//     margin: "0px",
+//     backgroundColor: theme.palette.primary.Dark
+//       ? theme.palette.primary.dark
+//       : theme.palette.primary.light,
+//     height: "17vh",
+//     width: "100%",
+//   },
 
-  logoContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
+//   logoContainer: {
+//     display: "flex",
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//   },
 
-  name: {
-    // border: "2px solid red",
-    margin: "0",
-    width: "95%",
-    textAlign: "center",
-  },
+//   name: {
+//     // border: "2px solid red",
+//     margin: "0",
+//     width: "95%",
+//     textAlign: "center",
+//   },
 
-  li: {
-    textDecoration: "none",
-  },
+//   li: {
+//     textDecoration: "none",
+//   },
 
-  nav: {
-    width: "50%",
-    margin: "auto",
-    marginTop: "0px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-});
+//   nav: {
+//     width: "50%",
+//     margin: "auto",
+//     marginTop: "0px",
+//     display: "flex",
+//     flexDirection: "row",
+//     justifyContent: "space-between",
+//   },
+// }));
 
 const Header = (props) => {
+  // const [Dark, setDark] = useState(false);
+
+  const useStyles = makeStyles((theme) => ({
+    container: {
+      margin: "0px",
+      // backgroundColor: Dark
+      //   ? theme.palette.primary.dark
+      //   : theme.palette.primary.light,
+      background: theme.palette.primary.light,
+      height: "17vh",
+      width: "100%",
+      color: "#fff",
+    },
+
+    logoContainer: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
+    },
+
+    name: {
+      // border: "2px solid red",
+      margin: "0",
+      width: "95%",
+      textAlign: "center",
+    },
+
+    li: {
+      textDecoration: "none",
+    },
+
+    nav: {
+      width: "50%",
+      margin: "auto",
+      marginTop: "0px",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
+  }));
+
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -83,6 +127,17 @@ const Header = (props) => {
             Electronics
           </Typography>
         </Link>
+        {/* <button
+          onClick={() => {
+            if (!Dark) {
+              setDark(true);
+            } else {
+              setDark(false);
+            }
+          }}
+        >
+          theme
+        </button> */}
       </Toolbar>
     </div>
   );

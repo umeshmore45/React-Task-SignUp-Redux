@@ -36,6 +36,7 @@ const SignIn = (props) => {
         name: "token",
         value: props.state.token,
         path: "/signIn",
+        max: "31536000",
       });
       props.history.push({
         pathname: "/signIn/details",

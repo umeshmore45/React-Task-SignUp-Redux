@@ -28,7 +28,7 @@ class Details extends Component {
   }
 
   componentWillUnmount = (event) => {
-    removeCookies();
+    removeCookies("token");
     this.props.history.push({
       pathname: "/",
       state: "",

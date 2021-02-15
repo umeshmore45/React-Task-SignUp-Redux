@@ -1,11 +1,13 @@
 import { makeStyles, TextField } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: "2vw",
-      width: "60vh",
-    },
+  conatiner: {
+    position: "absolute",
+    marginLeft: "63%",
+    width: "30%",
+  },
+  input: {
+    width: "80%",
   },
 }));
 
@@ -27,12 +29,13 @@ function SignUpOtpForm(props) {
       </form> */}
 
       <form
-        className={classes.root}
+        className={classes.conatiner}
         noValidate
         autoComplete="off"
         onSubmit={props.SignUpSubmit}
       >
         <TextField
+          className={classes.input}
           margin="normal"
           type="text"
           id="outlined-Otp"
