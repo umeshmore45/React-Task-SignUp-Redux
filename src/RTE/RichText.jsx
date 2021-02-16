@@ -2,6 +2,7 @@
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 // import HtmlEmbed from "@ckeditor/ckeditor5-html-embed/src/htmlembed";
 import { Component } from "react";
+// import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
 
@@ -23,6 +24,7 @@ class RichTextEditor extends Component {
     return (
       <div>
         <CKEditor
+          style={{ height: "20vh", display: "inline" }}
           editor={ClassicEditor}
           data="<p>Entre Your Text Here</p>"
           config={{

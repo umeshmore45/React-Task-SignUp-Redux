@@ -40,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "20%",
   },
 
+  title: {
+    marginLeft: "25%",
+  },
+
   password: {
     width: "50%",
     marginTop: "1%",
@@ -57,6 +61,15 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: "1%",
     marginLeft: "3%",
+  },
+  sub: {
+    marginLeft: "33%",
+  },
+
+  create: {
+    margin: "0",
+    marginLeft: "35%",
+    textDecoration: "none",
   },
 }));
 function SignInForm(props) {
@@ -77,7 +90,7 @@ function SignInForm(props) {
             onSubmit={props.SignInSubmit}
           >
             <Typography
-              className={classes.email}
+              className={classes.title}
               variant="subtitle1"
               color="primary"
             >
@@ -105,6 +118,13 @@ function SignInForm(props) {
               required
             />
             <br />
+            <Typography className={classes.sub} varient="subtitle2">
+              New to Shopping ?
+            </Typography>
+            <Link className={classes.create} to="/signUp">
+              Create Account
+            </Link>
+
             <Button
               className={classes.button}
               type="submit"

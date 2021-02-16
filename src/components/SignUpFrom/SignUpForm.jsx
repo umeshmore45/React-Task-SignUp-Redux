@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     width: "100%",
-    height: "75vh",
+    height: "77vh",
     justifyContent: "space-around",
   },
 
@@ -37,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "10%",
   },
 
+  title: {
+    marginLeft: "35%",
+  },
+
   input: {
     width: "50%",
     marginLeft: "25%",
@@ -49,6 +53,17 @@ const useStyles = makeStyles((theme) => ({
 
   li: {
     marginLeft: "5%",
+    textDecoration: "none",
+  },
+  all: {
+    textAlign: "centre",
+    marginLeft: "35%",
+  },
+  sign: {
+    marginLeft: "45%",
+  },
+
+  signLi: {
     textDecoration: "none",
   },
 }));
@@ -72,7 +87,7 @@ function SignUpForm(props) {
             autoComplete="off"
             onSubmit={props.SignUpSubmit}
           >
-            <Typography className={classes.input} varient="h1" color="primary">
+            <Typography className={classes.title} varient="h1" color="primary">
               SIGNUP TO S H O P P I N G
             </Typography>
             <TextField
@@ -119,6 +134,19 @@ function SignUpForm(props) {
               required
             />
             <br />
+            <Typography className={classes.all} varient="subtitle2">
+              Already have an account?
+            </Typography>
+            <Link className={classes.signLi} to="/signIn">
+              <Typography
+                className={classes.sign}
+                color="primary"
+                varient="subtitle1"
+              >
+                SignIn
+              </Typography>
+            </Link>
+
             <Button
               className={classes.register}
               type="submit"
