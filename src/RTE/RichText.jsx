@@ -1,4 +1,6 @@
+// import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
+// import HtmlEmbed from "@ckeditor/ckeditor5-html-embed/src/htmlembed";
 import { Component } from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
@@ -17,6 +19,7 @@ class RichTextEditor extends Component {
   };
 
   render() {
+    console.log(this.state.addData);
     return (
       <div>
         <CKEditor
@@ -26,9 +29,6 @@ class RichTextEditor extends Component {
             ckfinder: {
               uploadUrl: "http://localhost:5000/uploads",
             },
-            // options: {
-            //   resourceType: "image",
-            // },
           }}
           onChange={this.handleChange}
         />

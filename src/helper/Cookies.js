@@ -4,9 +4,14 @@ export const setCookies = ({ name, value, path, max }) => {
 };
 
 export const getCookies = (name) => {
-  let cok = document.cookie.split("=");
-  // console.log(cok[1]);
-  return cok[1];
+  let mt =
+    document.cookie.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)")?.pop() || "";
+
+  return mt;
+
+  // let cok = document.cookie.split("=");
+
+  // return cok[1];
 };
 
 export const removeCookies = (name) => {

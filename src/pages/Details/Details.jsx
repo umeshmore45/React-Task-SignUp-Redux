@@ -7,7 +7,7 @@ import RichTextEditor from "../../RTE/RichText";
 
 class Details extends Component {
   componentDidMount = () => {
-    this.props.GetDetails(getCookies());
+    this.props.GetDetails(getCookies("token"));
   };
 
   render() {

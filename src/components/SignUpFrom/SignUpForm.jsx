@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     width: "100%",
-    height: "80vh",
+    height: "75vh",
     justifyContent: "space-around",
   },
 
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     // border: "1px solid red",
     height: "60vh",
-    marginTop: "20%",
+    marginTop: "10%",
   },
 
   input: {
