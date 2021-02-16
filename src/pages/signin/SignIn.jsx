@@ -31,12 +31,12 @@ const SignIn = (props) => {
   };
 
   useEffect(() => {
-    // console.log(props.state, "hello");
     if (props.state.success) {
       setCookies({
         name: "token",
         value: props.state.token,
         path: "/signIn",
+        max: "31536000",
       });
       props.history.push({
         pathname: "/signIn/details",
@@ -50,11 +50,8 @@ const SignIn = (props) => {
     }
   });
 
-  // console.log(props);
-
   return (
     <div>
-      <h1>SignIn</h1>
       <SignInForm
         updateEmail={updateEmail}
         updatePassword={updatePassword}

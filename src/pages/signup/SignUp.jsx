@@ -74,7 +74,7 @@ const SignUp = (props) => {
 
   return (
     <div>
-      <h1>SignUp</h1>
+      {/* <h1>SignUp</h1> */}
       <SignUpForm
         SignUpSubmit={SignUpSubmit}
         updateEmail={updateEmail}

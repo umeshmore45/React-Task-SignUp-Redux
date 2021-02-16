@@ -51,7 +51,9 @@ const Home = (props) => {
               variant="contained"
               color="primary"
             >
-              <Typography color="secondary">SignUp</Typography>
+              <Typography varient="subtitle1" color="secondary">
+                SignUp
+              </Typography>
             </Button>
           </Link>
 
@@ -61,7 +63,9 @@ const Home = (props) => {
               variant="contained"
               color="primary"
             >
-              <Typography color="secondary">SignIn</Typography>
+              <Typography varient="subtitle1" color="secondary">
+                SignIn
+              </Typography>
             </Button>
           </Link>
         </div>

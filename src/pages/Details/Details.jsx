@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 import { getCookies, removeCookies } from "../../helper/Cookies";
 import authActionGenretor from "../../redux/action/authActionGenretor";
 import { authActionType } from "../../redux/constant/authActionType";
+import RichTextEditor from "../../RTE/RichText";
 
 class Details extends Component {
   componentDidMount = () => {
-    this.props.GetDetails(getCookies());
+    this.props.GetDetails(getCookies("token"));
   };
 
   render() {
@@ -17,6 +18,7 @@ class Details extends Component {
             <button onClick={this.componentWillUnmount}>SignOut</button>
             <p>Hello {this.props.state.user.name}</p>
             <h1>DashBoard</h1>
+            <RichTextEditor />
           </div>
         ) : (
           <p>LOading... </p>
@@ -26,7 +28,7 @@ class Details extends Component {
   }
 
   componentWillUnmount = (event) => {
-    removeCookies();
+    removeCookies("token");
     this.props.history.push({
       pathname: "/",
       state: "",
