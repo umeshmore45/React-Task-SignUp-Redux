@@ -25,6 +25,9 @@ import "froala-editor/css/plugins/fullscreen.min.css";
 import "froala-editor/css/plugins/image_manager.min.css";
 //image-tui
 import "froala-editor/css/third_party/image_tui.min.css";
+//image
+import "froala-editor/css/plugins/image.min.css";
+
 //line-brake
 import "froala-editor/css/plugins/line_breaker.min.css";
 //inserQuik
@@ -32,11 +35,13 @@ import "froala-editor/css/plugins/quick_insert.min.css";
 //Special Characters
 import "froala-editor/css/plugins/special_characters.min.css";
 //spell
-// import "froala-editor/css/plugins/spell_checker.min.css";
+import "froala-editor/css/third_party/spell_checker.min.css";
 //table
 import "froala-editor/css/plugins/table.min.css";
 //video
 import "froala-editor/css/plugins/video.min.css";
+//fontAwesome
+import "froala-editor/css/third_party/font_awesome.min.css";
 //
 //
 //js plugins
@@ -72,7 +77,8 @@ import "froala-editor/js/plugins/entities.min.js";
 //file
 import "froala-editor/js/plugins/file.min.js";
 //Font Awesome
-// import "../js/plugins/font_awesome.min.js";
+import "font-awesome/css/font-awesome.css";
+import "froala-editor/js/third_party/font_awesome.min.js";
 //Font Family
 import "froala-editor/js/plugins/font_family.min.js";
 //Font Size
@@ -121,6 +127,8 @@ import "froala-editor/js/plugins/url.min.js";
 import "froala-editor/js/plugins/video.min.js";
 //Word Paste
 import "froala-editor/js/plugins/word_paste.min.js";
+//themes
+import "froala-editor/css/themes/dark.min.css";
 
 class Froala extends Component {
   state = {
