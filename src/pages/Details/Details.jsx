@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { getCookies, removeCookies } from "../../helper/Cookies";
 import authActionGenretor from "../../redux/action/authActionGenretor";
 import { authActionType } from "../../redux/constant/authActionType";
-import RichTextEditor from "../../RTE/RichText";
+import Froala from "../../RTE/Froala";
+// import RichTextEditor from "../../RTE/RichText";
 
 class Details extends Component {
   componentDidMount = () => {
@@ -18,7 +19,8 @@ class Details extends Component {
             <button onClick={this.componentWillUnmount}>SignOut</button>
             <p>Hello {this.props.state.user.name}</p>
             <h1>DashBoard</h1>
-            <RichTextEditor />
+            {/* <RichTextEditor /> */}
+            <Froala />
           </div>
         ) : (
           <p>LOading... </p>
