@@ -1,4 +1,3 @@
-// import { green } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -13,6 +12,8 @@ const theme = createMuiTheme({
     },
   },
   breakpoints: {
+    keys: ["xs", "sm", "md", "lg", "xl"],
+
     values: {
       xs: 0,
       sm: 600,
