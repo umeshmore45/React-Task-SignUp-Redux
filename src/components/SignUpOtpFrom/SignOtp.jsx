@@ -6,6 +6,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "0%",
     marginLeft: "63%",
     width: "30%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginTop: "30%",
+      marginLeft: "23%",
+      width: "75%",
+    },
   },
   input: {
     width: "80%",

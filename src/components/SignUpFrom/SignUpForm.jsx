@@ -14,10 +14,21 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "77vh",
     justifyContent: "space-around",
+    [theme.breakpoints.between("xs", "sm")]: {
+      flexDirection: "column",
+      justifyContent: "none",
+      width: "100%",
+      height: "100vh",
+      marginTop: "5%",
+    },
   },
 
   imageContainer: {
     width: "48%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "100%",
+      height: "50vh",
+    },
   },
 
   img: {
@@ -29,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     width: "49%",
     height: "100%",
     textAlign: "centre",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "100%",
+    },
   },
 
   form: {
@@ -39,16 +53,27 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     marginLeft: "35%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "22%",
+    },
   },
 
   input: {
     width: "50%",
     marginLeft: "25%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "22%",
+      width: "60%",
+    },
   },
 
   register: {
     width: "20%",
     marginLeft: "30%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "30%",
+      marginLeft: "25%",
+    },
   },
 
   li: {
@@ -58,6 +83,9 @@ const useStyles = makeStyles((theme) => ({
   all: {
     textAlign: "centre",
     marginLeft: "35%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "25%",
+    },
   },
   sign: {
     marginLeft: "45%",

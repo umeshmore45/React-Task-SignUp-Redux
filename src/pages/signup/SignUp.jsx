@@ -48,7 +48,7 @@ const SignUp = (props) => {
 
     if (props.state.success) {
       props.SignOtp(formData);
-      console.log("otp");
+      // console.log("otp");
       // return (props.state.success = false);
     } else {
       props.Sign(formData);
@@ -74,7 +74,6 @@ const SignUp = (props) => {
 
   return (
     <div>
-      {/* <h1>SignUp</h1> */}
       <SignUpForm
         SignUpSubmit={SignUpSubmit}
         updateEmail={updateEmail}

@@ -14,16 +14,34 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     width: "100%",
     height: "100vh",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "100%",
+      height: "100vh",
+      flexDirection: "column",
+      justifyContent: "none",
+      // border: "2px solid red",
+    },
   },
 
   img: {
     width: "45%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "100%",
+      height: "70vh",
+      margin: "0",
+      marginTop: "5vh",
+    },
   },
 
   logInContainer: {
     width: "50%",
     height: "99vh",
     // border: "1px solid red",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "100%",
+      margin: "0",
+      // height: "50vh",
+    },
   },
 
   form: {
@@ -33,27 +51,45 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     marginTop: "30vh",
     height: "40vh",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginTop: "5%",
+    },
   },
 
   email: {
     width: "50%",
     marginLeft: "20%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "70%",
+      marginLeft: "15%",
+    },
   },
 
   title: {
     marginLeft: "25%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "15%",
+    },
   },
 
   password: {
     width: "50%",
     marginTop: "1%",
     marginLeft: "20%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "70%",
+      marginLeft: "15%",
+    },
   },
 
   button: {
     marginTop: "1%",
     marginLeft: "25%",
     width: "20%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      width: "30%",
+      marginLeft: "20%",
+    },
   },
   li: {
     textDecoration: "none",
@@ -61,15 +97,24 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: "1%",
     marginLeft: "3%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "2%",
+    },
   },
   sub: {
     marginLeft: "33%",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "25%",
+    },
   },
 
   create: {
     margin: "0",
     marginLeft: "35%",
     textDecoration: "none",
+    [theme.breakpoints.between("xs", "sm")]: {
+      marginLeft: "27%",
+    },
   },
 }));
 function SignInForm(props) {
