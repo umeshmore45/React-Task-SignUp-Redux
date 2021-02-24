@@ -15,7 +15,6 @@ class RouterRoute extends Component {
   render() {
     return (
       <>
-        {/* <Provider store={store}> */}
         <MuiThemeProvider theme={theme}>
           <Router>
             <Switch>
@@ -28,7 +27,6 @@ class RouterRoute extends Component {
             </Switch>
           </Router>
         </MuiThemeProvider>
-        {/* </Provider> */}
       </>
     );
   }

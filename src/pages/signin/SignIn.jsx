@@ -69,9 +69,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    SignIn: (user) => {
-      dispatch(authActionGenretor(authActionType.SIGNIN, { user }));
-    },
+    SignIn: (user) =>
+      dispatch(authActionGenretor(authActionType.SIGNIN, { user })),
   };
 };
 
