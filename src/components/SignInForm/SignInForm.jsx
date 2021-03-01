@@ -138,6 +138,7 @@ function SignInForm(props) {
               className={classes.title}
               variant="subtitle1"
               color="primary"
+              id="title"
             >
               SIGNIN TO S H O P P I N G
             </Typography>

@@ -10,12 +10,8 @@ import Froala from "../../RTE/Froala";
 class Details extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    console.log(props.state);
   }
-
-  static getState = (nextprops) => {
-    console.log(nextprops);
-  };
 
   componentDidMount = () => {
     this.props.GetDetails(getCookies("token"));
@@ -55,8 +51,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    GetDetails: (token) =>
-      dispatch(authActionGenretor(authActionType.GETUSER, { token })),
+    GetDetails: (token) => {
+      dispatch(authActionGenretor(authActionType.GETUSER, { token }));
+    },
   };
 };
 
