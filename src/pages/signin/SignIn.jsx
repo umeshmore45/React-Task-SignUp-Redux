@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import SignInForm from "../../components/SignInForm/SignInForm";
 import { setCookies } from "../../helper/Cookies";
@@ -11,12 +11,12 @@ const SignIn = (props) => {
     password: "",
   });
 
-  const updateEmail = (event) => [
+  const updateEmail = (event) => {
     setFormData({
       ...formData,
       email: event.target.value,
-    }),
-  ];
+    });
+  };
 
   const updatePassword = (event) => {
     setFormData({
@@ -30,7 +30,7 @@ const SignIn = (props) => {
     props.SignIn(formData);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (props.state.success) {
       setCookies({
         name: "token",
@@ -69,9 +69,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    SignIn: (user) => {
-      dispatch(authActionGenretor(authActionType.SIGNIN, { user }));
-    },
+    SignIn: (user) =>
+      dispatch(authActionGenretor(authActionType.SIGNIN, { user })),
   };
 };
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import SignUpForm from "../../components/SignUpFrom/SignUpForm";
 import SignUpOtpForm from "../../components/SignUpOtpFrom/SignOtp";
@@ -48,15 +48,13 @@ const SignUp = (props) => {
 
     if (props.state.success) {
       props.SignOtp(formData);
-      // console.log("otp");
-      // return (props.state.success = false);
+      console.log("otp");
     } else {
       props.Sign(formData);
-      // return (props.state.success = true);
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (props.otpState.success) {
       props.history.push({
         pathname: "/",

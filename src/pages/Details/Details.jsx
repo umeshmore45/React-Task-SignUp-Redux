@@ -8,8 +8,21 @@ import Froala from "../../RTE/Froala";
 // import RichTextEditor from "../../RTE/RichText";
 
 class Details extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props.state);
+  }
+
   componentDidMount = () => {
     this.props.GetDetails(getCookies("token"));
+  };
+
+  SignOut = (event) => {
+    removeCookies("token");
+    this.props.history.push({
+      pathname: "/",
+      state: "",
+    });
   };
 
   render() {
@@ -18,7 +31,7 @@ class Details extends Component {
         <Header />
         {this.props.state.success ? (
           <div>
-            <button onClick={this.componentWillUnmount}>SignOut</button>
+            <button onClick={this.SignOut}>SignOut</button>
             <p>Hello {this.props.state.user.name}</p>
             <h1>DashBoard</h1>
             <Froala />
@@ -29,14 +42,6 @@ class Details extends Component {
       </div>
     );
   }
-
-  componentWillUnmount = (event) => {
-    removeCookies("token");
-    this.props.history.push({
-      pathname: "/",
-      state: "",
-    });
-  };
 }
 const mapStateToProps = (state) => {
   return {

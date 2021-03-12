@@ -1,6 +1,6 @@
 import { MuiThemeProvider } from "@material-ui/core";
 import { Component } from "react";
-import { connect } from "react-redux";
+// import { Provider } from "react-redux";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Details from "../pages/Details/Details";
 import Home from "../pages/home/Home";
@@ -34,10 +34,4 @@ class RouterRoute extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    state: state.authReducer.userSignIn.success,
-  };
-};
-
-export default connect(mapStateToProps)(RouterRoute);
+export default RouterRoute;

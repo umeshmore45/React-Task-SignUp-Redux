@@ -201,7 +201,7 @@ const SignIn = (action, payload) => async (dispatch, getstate) => {
 };
 
 const GetUser = (action, payload) => async (dispatch, getstate) => {
-  console.log(payload.token);
+  // console.log(payload.token);
 
   // let url = `${process.env.REACT_APP_BASE_URL}/user`;
   // fetch(url, {
