@@ -1,5 +1,4 @@
 import { authActionType } from "../constant/authActionType";
-// import axios from "axios";
 import hitApi from "../../axios/axiosApi";
 
 const SignUp = (action, payload) => async (dispatch, getstate) => {
@@ -19,7 +18,7 @@ const SignUp = (action, payload) => async (dispatch, getstate) => {
     headers: headers,
   })
     .then((data) => {
-      console.log(data.data, "he");
+      // console.log(data.data, "he");
       let newpayload = {
         name,
         email,

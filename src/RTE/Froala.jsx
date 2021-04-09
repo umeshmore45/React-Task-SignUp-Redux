@@ -255,6 +255,17 @@ class Froala extends Component {
               "print",
               "wordPaste",
             ],
+            imageUploadParam: "upload",
+            imageUploadURL: `${process.env.REACT_APP_BASE_URL_IMG}/uploads`,
+            imageUploadMethod: "POST",
+            imageAllowedTypes: ["jpeg", "jpg", "png", "gif"],
+            events: {
+              "image.uploaded": function (response) {
+                let img = JSON.parse(response);
+                this.image.insert(img.url, false, null, this.image.get(), img);
+                return false;
+              },
+            },
           }}
           model={this.state.model}
           onModelChange={this.handleModelChange}

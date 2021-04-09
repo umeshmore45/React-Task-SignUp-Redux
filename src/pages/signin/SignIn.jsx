@@ -12,6 +12,7 @@ const SignIn = (props) => {
   });
 
   const updateEmail = (event) => {
+    console.log(event.target.value);
     setFormData({
       ...formData,
       email: event.target.value,
