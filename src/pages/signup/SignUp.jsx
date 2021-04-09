@@ -48,7 +48,6 @@ const SignUp = (props) => {
 
     if (props.state.success) {
       props.SignOtp(formData);
-      console.log("otp");
     } else {
       props.Sign(formData);
     }

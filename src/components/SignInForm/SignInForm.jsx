@@ -177,6 +177,7 @@ function SignInForm(props) {
               margin="normal"
               variant="contained"
               color="primary"
+              id="SignInBtn"
             >
               SignIn
             </Button>
@@ -186,6 +187,7 @@ function SignInForm(props) {
                 margin="normal"
                 variant="contained"
                 color="primary"
+                id="backBtn"
               >
                 BACK
               </Button>

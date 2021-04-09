@@ -22,4 +22,9 @@ describe("testing SignUp From", () => {
   it("check input password", () => {
     expect(wrapper.find("#outlined-password")).toHaveLength(1);
   });
+
+  it("chach back button", () => {
+    wrapper.find("#backBtn").at(0).simulate("click");
+    expect(wrapper.find("#backBtn").text()).toContain("BACK");
+  });
 });

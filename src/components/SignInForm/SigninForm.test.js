@@ -1,16 +1,13 @@
 import SignInForm from "./SignInForm";
 import { shallow } from "enzyme";
+import React from "react";
+jest.mock("../../pages/signin/SignIn.jsx", () => {});
 
 describe("testing SignFrom", () => {
-  let updateEmail;
-  let updatePassword;
   let wrapper;
+
   beforeEach(() => {
-    updateEmail = jest.fn();
-    updatePassword = jest.fn();
-    wrapper = shallow(
-      <SignInForm updateEmail={updateEmail} updatePassword={updatePassword} />
-    );
+    wrapper = shallow(<SignInForm />);
   });
 
   it("testing email input", () => {
@@ -25,29 +22,8 @@ describe("testing SignFrom", () => {
       "SIGNIN TO S H O P P I N G"
     );
   });
-
-  it("testing input email filed", () => {
-    wrapper.find("#outlined-email").simulate("change", {
-      target: {
-        value: "umeshmore643@gmail.com",
-      },
-    });
-    wrapper.update();
-
-    expect(wrapper.find("#outlined-email").props("value")).toEqual(
-      "umeshmore643@gmail.com"
-    );
-  });
-
-  it("tseting Password Filed", () => {
-    wrapper.find("#outlined-password").simulate("change", {
-      target: {
-        value: "Pass@123",
-      },
-    });
-
-    expect(wrapper.find("#outlined-password").prop("value")).toEqual(
-      "Pass@123"
-    );
+  it("testing BackButton", () => {
+    wrapper.find("#backBtn").at(0).simulate("click");
+    expect(wrapper.find("#backBtn").text()).toContain("BACK");
   });
 });

@@ -181,11 +181,17 @@ function SignUpForm(props) {
               margin="normal"
               variant="contained"
               color="primary"
+              id="SignUpBtn"
             >
               Register
             </Button>
             <Link className={classes.li} to="/">
-              <Button margin="normal" variant="contained" color="primary">
+              <Button
+                margin="normal"
+                variant="contained"
+                color="primary"
+                id="backBtn"
+              >
                 BACK
               </Button>
             </Link>

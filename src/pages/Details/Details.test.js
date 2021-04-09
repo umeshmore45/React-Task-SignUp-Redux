@@ -30,7 +30,7 @@ describe("testing DashBoard", () => {
       .dive();
   });
 
-  it("tseting SignOut", () => {
+  it("testing SignOut", () => {
     wrapper.find("button").simulate("click");
     expect(wrapper.find("button").text()).toEqual("SignOut");
   });
